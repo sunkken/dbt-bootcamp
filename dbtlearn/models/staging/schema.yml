@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Staging model for customer data
+    columns:
+      - name: customer_id
+        description: Primary key for customers
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Full name of the customer
+        tests:
+          - not_null
+
+      - name: customer_email
+        description: Customer email address
+        tests:
+          - not_null
+
+      - name: customer_created_at
+        description: Date when customer account was created
+        tests:
+          - not_null
+
+  - name: stg_orders
+    description: Staging model for order data
+    columns:
+      - name: order_id
+        description: Primary key for orders
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Foreign key to customers
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: order_date
+        description: Date when order was placed
+        tests:
+          - not_null
+
+      - name: order_status
+        description: Current status of the order
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['completed', 'pending', 'cancelled']
+
+      - name: order_amount
+        description: Total order amount
+        tests:
+          - not_null
+
+  - name: stg_payments
+    description: Staging model for payment/line item data
+    columns:
+      - name: payment_id
+        description: Primary key for payments
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Foreign key to orders
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+
+      - name: product_name
+        description: Name of the product
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Quantity ordered
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: Price per unit
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: Total amount for line item
+        tests:
+          - not_null

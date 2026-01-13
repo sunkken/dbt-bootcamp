@@ -1,0 +1,15 @@
+id,order_id,product_name,quantity,price
+1,1,Widget A,2,25.00
+2,1,Widget B,5,20.00
+3,2,Widget C,3,40.00
+4,2,Widget A,4,25.00
+5,3,Widget B,1,20.00
+6,3,Widget D,2,27.75
+7,4,Widget A,10,25.00
+8,4,Widget C,5,40.00
+9,5,Widget D,3,27.75
+10,5,Widget B,2,20.00
+11,6,Widget A,15,25.00
+12,6,Widget C,10,40.00
+13,8,Widget B,5,20.00
+14,8,Widget D,5,27.75
