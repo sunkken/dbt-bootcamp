@@ -9,11 +9,13 @@ Welcome to the dbt Bootcamp repository! This repository contains all the materia
 - [About](#about)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
+- [Quick Start Guide](#quick-start-guide)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Running the Project](#running-the-project)
 - [Learning Path](#learning-path)
 - [Resources](#resources)
+- [Contributing](#contributing)
 
 ## 🎯 About
 
@@ -34,6 +36,12 @@ Before you begin, ensure you have the following installed:
 - pip (Python package manager)
 - A supported database (PostgreSQL, Snowflake, BigQuery, Redshift, etc.)
 - Git
+
+## 🚀 Quick Start Guide
+
+**Want to get started quickly?** Check out the [Quick Start Guide](QUICKSTART.md) to be up and running in 5 minutes!
+
+For a more detailed setup, continue with the instructions below.
 
 ## 🚀 Installation
 
@@ -220,6 +228,15 @@ This project demonstrates key dbt concepts:
 - ✅ Schema configuration
 - ✅ Materialization strategies
 
+## 📝 Hands-on Exercises
+
+Ready to practice? Check out [EXERCISES.md](EXERCISES.md) for 10 progressive exercises covering:
+- Seeds and staging models
+- Marts and dimensional modeling
+- Testing strategies
+- Macros and documentation
+- Advanced topics (incremental models, snapshots, packages)
+
 ## 📖 Resources
 
 - [dbt Documentation](https://docs.getdbt.com/)
@@ -229,11 +246,13 @@ This project demonstrates key dbt concepts:
 
 ## 🤝 Contributing
 
-This is a learning repository. Feel free to:
-- Add your own models
-- Experiment with different approaches
-- Create new tests and macros
-- Extend the sample data
+Want to add your own examples or improvements? See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Adding new models
+- Creating exercises
+- Improving documentation
+- Submitting pull requests
+
+This is a learning repository. Feel free to experiment and extend it!
 
 ## 📝 Notes
 
