@@ -39,8 +39,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
 
       - name: order_date
         description: Date when order was placed
@@ -52,7 +53,8 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['completed', 'pending', 'cancelled']
+              arguments:
+                values: ['completed', 'pending', 'cancelled']
 
       - name: order_amount
         description: Total order amount
@@ -73,8 +75,9 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_orders')
-              field: order_id
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
 
       - name: product_name
         description: Name of the product

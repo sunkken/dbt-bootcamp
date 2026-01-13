@@ -142,6 +142,24 @@ dbt docs generate
 dbt docs serve
 ```
 
+### 5. (Optional) Install dbt Packages
+
+You can optionally install useful dbt packages for additional functionality:
+
+1. Create a `packages.yml` file in the `dbtlearn` directory:
+   ```yaml
+   packages:
+     - package: dbt-labs/dbt_utils
+       version: 1.1.1
+     - package: dbt-labs/codegen
+       version: 0.12.1
+   ```
+
+2. Install the packages:
+   ```bash
+   dbt deps
+   ```
+
 ## 🔄 Running the Project
 
 Common dbt commands you'll use:
