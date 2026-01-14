@@ -1,0 +1,17 @@
+unit_tests:
+  - name: unittest_fullmoon_matcher
+    model: mart_fullmoon_reviews
+    given:
+      - input: ref('fct_reviews')
+        rows:
+          - {review_date: '2026-01-03'}
+          - {review_date: '2026-01-04'}
+          - {review_date: '2026-01-05'}
+      - input: ref('seed_full_moon_dates')
+        rows:
+          - {full_moon_date: '2026-01-03'}
+    expect:
+      rows:
+        - {review_date: '2026-01-03', is_full_moon: "not full moon"}
+        - {review_date: '2026-01-04', is_full_moon: "full moon"}
+        - {review_date: '2026-01-05', is_full_moon: "not full moon"}
