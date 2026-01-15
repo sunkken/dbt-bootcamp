@@ -5,6 +5,7 @@ WITH l AS (
   SELECT *
   FROM {{ ref('dim_hosts_cleansed') }}
 )
+
 SELECT
   l.listing_id,
   l.listing_name,
