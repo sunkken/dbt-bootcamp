@@ -1,0 +1,16 @@
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://3bc7d881.us2a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=CWNe-Lyj0vHPnzduPHsX42TtWRai4jtDf6ELlx5IyXgLut_FpAxPaL5_jRxobTrR
+    description: Executive Dashboard about Airbnb listings and hosts
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Toni Sundqvist
+      email: dbtstudent@gmail.com
