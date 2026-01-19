@@ -5,16 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10,<3.15"
 dependencies = [
-    "dagster",
-    "dagster-cloud",
-    "dagster-dbt",
-    "dbt-core<1.12",
-    "dbt-snowflake<1.12",
+    "dagster~=1.12.0",
+    "dagster-cloud~=1.12.0",
+    "dagster-dbt~=0.28.0",
+    "dbt-core~=1.11.0",
+    "dbt-snowflake~=1.11.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "dagster-webserver",
+    "dagster-webserver~=1.12.0",
 ]
 
 [build-system]

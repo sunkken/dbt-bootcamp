@@ -2,14 +2,18 @@
 .venv/
 __pycache__/
 *.pyc
+*.egg-info/
 
 # dbt
 transform/target/
 transform/dbt_packages/
+transform/dbt_internal_packages/
 transform/logs/
 
 # dagster
 orchestration/tmpg*
+orchestration/.tmp*/
+orchestration/uv.lock
 
 # Credentials
 profiles.yml

@@ -8,6 +8,9 @@ defs = Definitions(
     assets=[airbnb_dbt_assets],
     schedules=schedules,
     resources={
-        "dbt": DbtCliResource(project_dir=airbnb_project),
+        "dbt": DbtCliResource(
+            project_dir=airbnb_project.project_dir,
+            profiles_dir=airbnb_project.profiles_dir,
+        ),
     },
 )
