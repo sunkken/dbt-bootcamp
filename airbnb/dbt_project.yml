@@ -44,6 +44,14 @@ models:
     src:
       +materialized: ephemeral
 
+vars:
+  user_name: "dbt_project_yml_user"
+  start_date: "2025-01-01"
+  end_date: "2026-01-19"
+
 data_tests:
   +store_failures: true
   +schema: _test_failures
+
+flags:
+  require_generic_test_arguments_property: true
