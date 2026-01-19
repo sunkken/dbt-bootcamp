@@ -1,16 +1,16 @@
+import os
+
 from dagster import Definitions
 from dagster_dbt import DbtCliResource
-from .assets import airbnb_dbt_assets
-from .project import airbnb_project
+
+from .assets import airbnb_dbt_assets, airbnb_partitioned_dbt_assets
+from .constants import dbt_project_dir
 from .schedules import schedules
 
 defs = Definitions(
-    assets=[airbnb_dbt_assets],
+    assets=[airbnb_dbt_assets, airbnb_partitioned_dbt_assets],
     schedules=schedules,
     resources={
-        "dbt": DbtCliResource(
-            project_dir=airbnb_project.project_dir,
-            profiles_dir=airbnb_project.profiles_dir,
-        ),
+        "dbt": DbtCliResource(project_dir=os.fspath(dbt_project_dir)),
     },
 )
