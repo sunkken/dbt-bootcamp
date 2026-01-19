@@ -14,9 +14,8 @@ def airbnb_dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):
     yield from dbt.cli(["build"], context=context).stream()
 
 
-# many dbt assets use an incremental approach to avoid
-# re-processing all data on each run
-# this approach can be modelled in dagster using partitions
+# many dbt assets use an incremental approach to avoid re-processing all data on each run.
+# this approach can be modelled in dagster using partitions.
 daily_partitions = DailyPartitionsDefinition(start_date="2022-01-24")
 
 class CustomDagsterDbtTranslator(DagsterDbtTranslator):
