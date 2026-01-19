@@ -4,9 +4,12 @@ __pycache__/
 *.pyc
 
 # dbt
-target/
-dbt_packages/
-logs/
+transform/target/
+transform/dbt_packages/
+transform/logs/
+
+# dagster
+orchestration/tmpg*
 
 # Credentials
 profiles.yml
