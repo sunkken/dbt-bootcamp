@@ -47,5 +47,3 @@ models:
 data_tests:
   +store_failures: true
   +schema: _test_failures
-flags:
-  require_generic_test_arguments_property: true
