@@ -79,4 +79,49 @@ models:
               arguments:
                 max_value: 5000
   - name: mart_fullmoon_reviews
-    description: sample description for mart_fullmoon_reviews model
+    description: The mart_fullmoon_reviews model provides insights into customer reviews by identifying whether they occurred during a full moon or not. This information can help businesses analyze patterns in customer sentiment and behavior, potentially uncovering unique trends associated with lunar phases. By leveraging this model, businesses can make informed decisions to optimize customer engagement strategies and improve overall service quality.
+    columns:
+      - name: review_id
+        description: A unique identifier for each review in the dataset.
+        data_type: varchar
+      - name: listing_id
+        description: A unique identifier for the Airbnb listing associated with the review.
+        data_type: number
+        data_tests:
+          - unique
+      - name: review_date
+        description: The timestamp indicating the date and time when the review was submitted.
+        data_type: timestamp_ntz
+      - name: reviewer_name
+        description: The name of the individual who provided the review for the listing.
+        data_type: varchar
+      - name: review_text
+        description: The text content of the review provided by the reviewer, detailing their experience or feedback about the listing.
+        data_type: varchar
+      - name: review_sentiment
+        description: Indicates the sentiment of the review text, typically categorized as positive, negative, or neutral based on the content of the review.
+        data_type: varchar
+      - name: is_full_moon
+        description: Indicates whether the review date falls on or one day after a full moon. Possible values are 'full moon' and 'not full moon'.
+        data_type: varchar
+  - name: fct_reviews
+    description: The fct_reviews model processes raw review data from the Airbnb source, transforming it into a structured format for analysis. It includes details such as the listing ID, review date, reviewer name, review text, and sentiment analysis of the review. Additionally, a unique review ID is generated for each record to ensure data integrity and facilitate tracking.
+    columns:
+      - name: review_id
+        description: A unique identifier for each review, generated using a hash of the listing ID, review date, reviewer name, and review text.
+        data_type: varchar
+      - name: listing_id
+        description: The unique identifier for the Airbnb listing associated with the review.
+        data_type: number
+      - name: review_date
+        description: The date when the review was submitted.
+        data_type: timestamp_ntz
+      - name: reviewer_name
+        description: The name of the individual who provided the review for the listing.
+        data_type: varchar
+      - name: review_text
+        description: The textual content of the review provided by the reviewer, describing their experience or feedback.
+        data_type: varchar
+      - name: review_sentiment
+        description: The sentiment analysis result of the review text, indicating whether the review is positive, negative, or neutral.
+        data_type: varchar
