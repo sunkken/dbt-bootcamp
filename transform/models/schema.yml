@@ -27,7 +27,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+                values: [ 'Entire home/apt', 'Private room', 'Shared room', 'Hotel room' ]
       - name: minimum_nights
         description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
         data_tests:
@@ -70,7 +70,7 @@ models:
                 column_type: number
           - dbt_expectations.expect_column_quantile_values_to_be_between:
               arguments:
-                quantile: .99
+                quantile: 0.99
                 min_value: 50
                 max_value: 500
           - dbt_expectations.expect_column_max_to_be_between:
@@ -78,3 +78,5 @@ models:
                 severity: warn
               arguments:
                 max_value: 5000
+  - name: mart_fullmoon_reviews
+    description: sample description for mart_fullmoon_reviews model
